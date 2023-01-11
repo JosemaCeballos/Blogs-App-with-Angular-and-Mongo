@@ -1,0 +1,32 @@
+<div class="loading" *ngIf="!articles">Cargando...</div>
+
+<div class="loading" *ngIf="articles && articles.length == 0">
+  No hay articulos para mostrar, intentalo más tarde :D
+</div>
+
+<div id="articles" *ngIf="articles">
+  <article
+    class="article-item"
+    id="article-template"
+    *ngFor="let article of articles"
+  >
+    <div class="image-wrap">
+      <img
+        src="{{ url + 'get-image/' + article.image }}"
+        alt="{{ article.title }}"
+        *ngIf="article.image"
+      />
+      <img
+        src="assets/images/default-image.png"
+        alt="{{ article.title }}"
+        *ngIf="!article.image"
+      />
+    </div>
+
+    <h2>{{ article.title }}</h2>
+    <span class="date">{{ article.date | amLocale : "es" | amTimeAgo }}</span>
+    <a [routerLink]="['/blog/articulo/' + article._id]">Leer más</a>
+
+    <div class="clearfix"></div>
+  </article>
+</div>

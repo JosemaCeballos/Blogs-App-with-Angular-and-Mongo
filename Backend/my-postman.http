@@ -1,0 +1,62 @@
+GET http://localhost:3900/api/test-de-controllador
+Content-Type: application/json
+
+
+#####
+POST http://localhost:3900/api/datos-curso
+Content-Type: application/json
+
+{
+    "curso": "Master en Frameworks JS",
+    "estudiante": "Jose Maria Ceballos",
+    "hola": "Que tal"
+}
+
+
+######
+POST http://localhost:3900/api/save
+Content-Type: application/json
+
+{
+    "title": "Prueba6",
+    "content": "Contenido6"
+}
+
+
+######
+GET http://localhost:3900/api/articles
+Content-Type: application/json
+
+
+
+######
+GET http://localhost:3900/api/article/63bc95f278bf83a301ee5e37
+Content-Type: application/json
+
+
+########
+PUT http://localhost:3900/api/article/63bc95fc78bf83a301ee5e3b
+Content-Type: application/json
+
+{
+    "title": "newTitle",
+    "content": "newContent"
+}
+
+
+
+#######
+DELETE http://localhost:3900/api/article/63bc95fc78bf83a301ee5e3b
+Content-Type: application/json
+
+
+#######
+GET http://localhost:3900/api/get-image/jc6CI25Hbxa6DEt3SjpkobfL.png
+Content-Type: application/json
+
+
+#######
+
+
+GET http://localhost:3900/api/search/envio
+Content-Type: application/json

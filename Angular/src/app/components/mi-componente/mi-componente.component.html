@@ -1,0 +1,13 @@
+<div style="text-align:center">
+  <h1>{{ title }}</h1>
+  <p>{{ comentario }}</p>
+  <p>{{ year }}</p>
+  <p>Hola soy un parrafo a la vista</p>
+</div>
+
+<button (click)="ocultarPeliculas()">Ocultar/Mostrar Peliculas</button>
+<div *ngIf="mostrarPelicula">
+  <app-peliculas></app-peliculas>
+</div>
+<app-prueba></app-prueba>
+<app-home></app-home>

@@ -1,0 +1,28 @@
+<app-slider [nombre]="'Peliculas'"></app-slider>
+
+<!-- Pruebas con componentes-->
+<div class="center">
+  <section id="content">
+    <div id="favorita" *ngIf="favorita">
+      <h2 class="subheader">Pelicula Favorita:</h2>
+      <h4>
+        {{ favorita.title | uppercase }}
+      </h4>
+      <h4>{{ favorita.year }}</h4>
+      <h5>{{ this.fecha | date : "fullDate" }}</h5>
+    </div>
+
+    <h2 class="subheader">Listado de peliculas:</h2>
+    <div id="articles" *ngIf="peliculas">
+      <div *ngFor="let pelicula of peliculas; let i = index">
+        <app-pelicula
+          [pelicula]="pelicula"
+          [i]="i"
+          (MarcarFavorita)="mostrarFavorita($event)"
+        >
+        </app-pelicula>
+      </div>
+    </div>
+  </section>
+  <app-sidebar></app-sidebar>
+</div>
